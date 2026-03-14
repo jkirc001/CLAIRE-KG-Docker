@@ -75,4 +75,4 @@ docker compose down -v
 - The pre-ingested graph includes CVE, CWE, CAPEC, ATT&CK, NICE, and DCWF datasets with crosswalks. Embeddings are not included -- only the Cypher-based ask path is supported.
 - The image includes the `deepeval` evaluation dependency, which increases image size. It is not needed for asking questions.
 - If queries are slow on large result sets, increase Neo4j memory settings in `docker-compose.yml`. See the main repo's `docker/docker-compose.yml` for ingestion-tuned settings.
-- If you update the Neo4j image version, remove the plugins volume to avoid stale plugin JARs: `docker volume rm claire-kg-graphrag-plugins`
+- If you update the Neo4j image version, remove the plugins volume to avoid stale plugin JARs: `docker volume rm claire-kg-docker-graphrag-plugins`
