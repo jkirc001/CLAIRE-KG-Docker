@@ -66,10 +66,10 @@ if AnswerRelevancyTemplate is not None:
         """Custom template so the judge treats KG supporting detail as relevant."""
 
         @staticmethod
-        def generate_verdicts(input: str, statements: str) -> str:
+        def generate_verdicts(input: str, statements: str, **kwargs) -> str:
             """Prepend KG-specific instructions to base template so list/supporting detail counts as relevant."""
-            # Match base signature exactly: DeepEval calls Template.generate_verdicts(input, statements)
-            base = AnswerRelevancyTemplate.generate_verdicts(input, statements)
+            # Accept **kwargs for forward compatibility (e.g. DeepEval added 'multimodal' kwarg)
+            base = AnswerRelevancyTemplate.generate_verdicts(input, statements, **kwargs)
             kg_note = (
                 "**Knowledge-graph (KG) answer note:** The statements are from a "
                 "knowledge-graph answer. Supporting detail from the database (e.g. related "
