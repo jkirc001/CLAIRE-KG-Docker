@@ -76,3 +76,4 @@ docker compose down -v
 - The image includes the `deepeval` evaluation dependency, which increases image size. It is not needed for asking questions.
 - If queries are slow on large result sets, increase Neo4j memory settings in `docker-compose.yml`. See the main repo's `docker/docker-compose.yml` for ingestion-tuned settings.
 - If you update the Neo4j image version, remove the plugins volume to avoid stale plugin JARs: `docker volume rm claire-kg-docker-graphrag-plugins`
+- Neo4j Browser is available at http://localhost:7475 (Bolt on port 7688). These ports avoid conflicts with the main CLAIRE-KG repo.

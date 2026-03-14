@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: claire-kg/claire-kg-app
+  IMAGE_NAME: jkirc001/claire-kg-app
 
 jobs:
   build-and-push:
