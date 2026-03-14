@@ -53,7 +53,7 @@ services:
       start_period: 5m
 
   app:
-    build: .
+    image: ghcr.io/claire-kg/claire-kg-app:latest
     container_name: claire-kg-docker-app
     env_file: .env
     environment:
