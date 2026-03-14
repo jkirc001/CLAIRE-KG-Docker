@@ -1,0 +1,14 @@
+.git
+.gitignore
+.github
+.env
+.env.example
+backups/
+docs/
+tests/
+scripts/
+docker/
+final_outputs/
+tmp_outputs/
+LICENSE
+uv.lock

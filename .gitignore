@@ -1,0 +1,13 @@
+notes.md
+TODO.md
+docker-plan.md
+import/
+.env
+backups/
+.claude/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
