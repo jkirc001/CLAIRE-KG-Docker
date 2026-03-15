@@ -4,6 +4,7 @@ docker-plan.md
 import/
 .env
 backups/
+docker-compose.override.yml
 .claude/
 __pycache__/
 *.pyc
