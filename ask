@@ -15,10 +15,12 @@ fi
 docker compose up -d claire-kg-docker-graphrag 2>/dev/null
 
 # Wait for Neo4j to be healthy
-echo "Waiting for Neo4j..."
-until [ "$(docker inspect claire-kg-docker-graphrag --format='{{.State.Health.Status}}' 2>/dev/null)" = "healthy" ]; do
-    sleep 5
-done
+if [ "$(docker inspect claire-kg-docker-graphrag --format='{{.State.Health.Status}}' 2>/dev/null)" != "healthy" ]; then
+    echo "Waiting for Neo4j..."
+    until [ "$(docker inspect claire-kg-docker-graphrag --format='{{.State.Health.Status}}' 2>/dev/null)" = "healthy" ]; do
+        sleep 5
+    done
+fi
 
 # Pull latest app image
 docker compose pull app 2>/dev/null
