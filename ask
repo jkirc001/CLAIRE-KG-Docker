@@ -20,4 +20,7 @@ until [ "$(docker inspect claire-kg-docker-graphrag --format='{{.State.Health.St
     sleep 5
 done
 
+# Pull latest app image
+docker compose pull app 2>/dev/null
+
 docker compose run --rm app ask "$@"
